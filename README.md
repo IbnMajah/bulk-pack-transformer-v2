@@ -7,8 +7,16 @@ Description of this microservice
 This repository was created from Greenstand's template for microservice projects.  This means it comes with many development tools that we use for development and deployment.  As a contributor to this repository, you should learn and use these tools.  They are outlined below.
 
 ## db-migrate
+
+db-migrate is used to create database tables and other database objects
+
 ## Conventional Commits
+
+https://www.conventionalcommits.org/en/v1.0.0/
+
 ## husky
+husky will check commit messages to make sure they follow the required format
+
 ## prettier / lint
 ## github actions
 ## mocha
