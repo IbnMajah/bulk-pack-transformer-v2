@@ -39,5 +39,26 @@ paths:
       responses:
         '200':
           description: OK
+  /v1/planter:
+    post:
+      summary: ''
+      operationId: post-v1-planter
+      responses:
+        '200':
+          description: OK
+  /v1/tree:
+    post:
+      summary: ''
+      operationId: post-v1-tree
+      responses:
+        '200':
+          description: OK
+  /v1/device:
+    post:
+      summary: ''
+      operationId: post-v1-device
+      responses:
+        '200':
+          description: OK
 security:
   - httpBearer: []
