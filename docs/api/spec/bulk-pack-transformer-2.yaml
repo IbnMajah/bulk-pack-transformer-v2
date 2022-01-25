@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: INCOMPLETE treetracker api example
+  contact: {}
+  version: '0.1'
+paths:
+  /wallet_registrations:
+    post:
+      summary: ''
+      operationId: post-wallet_registrations
+      responses:
+        '200':
+          description: OK
+  /captures:
+    post:
+      summary: ''
+      operationId: post-captures
+      responses:
+        '200':
+          description: OK
+  /device_configurations:
+    post:
+      summary: ''
+      operationId: post-device_configurations
+      responses:
+        '200':
+          description: OK
+  /sessions:
+    post:
+      summary: ''
+      operationId: post-sessions
+      responses:
+        '200':
+          description: OK
+  /messages:
+    post:
+      summary: ''
+      operationId: post-messages
+      responses:
+        '200':
+          description: OK
+security:
+  - httpBearer: []
