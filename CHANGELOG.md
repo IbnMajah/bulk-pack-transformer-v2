@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.0.1...v1.0.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* add joi to deps ([98509e8](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/98509e892144916b1f79fdb87a923c1b7510ed5d))
+
 ## [1.0.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.0.0...v1.0.1) (2022-02-03)
 
 
