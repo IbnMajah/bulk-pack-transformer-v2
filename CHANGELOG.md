@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.0.0...v1.0.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* no database migrations in this workflow ([44b2336](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/44b233603adb5e5ca55ffe8b80177bc0d0f949e7))
+
 # 1.0.0 (2022-02-03)
 
 
