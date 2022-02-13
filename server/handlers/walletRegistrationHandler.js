@@ -1,37 +1,75 @@
-// const Joi = require('joi');
-// const log = require('loglevel');
+const log = require('loglevel');
+const convertStringToUuid = require('uuid-by-string');
 
-// const { walletRegistration } = require('../models/WalletRegistration');
+const {
+  createWalletRegistration,
+  WalletRegistration,
+} = require('../models/WalletRegistration');
 
-// const Session = require('../models/Session');
+const walletRegistrationPost = async function (req, res, next) {
+  log.log('/wallet_registrations');
+  try {
+    await createWalletRegistration(WalletRegistration(req.body));
+    log.log('/wallet_registrations done');
+    res.status(200).json();
+  } catch (e) {
+    log.warn(e);
+    next(e);
+  }
+};
 
-// const WalletRegistrationRepository = require('../infra/repositories/WalletRegistrationRepository');
+const LegacyPlanterPost = async function (req, res, next) {
+  log.log('/v1/planter');
+  try {
+    const {
+      planter_identifier,
+      first_name,
+      last_name,
+      organization,
+      device_identifier,
+      record_uuid,
+      image_url,
+      lat,
+      lon,
+    } = req.body;
 
-// const walletRegistrationPost = async function (req, res) {
-//   const session = new Session();
-//   const walletRegistrationRepo = new WalletRegistrationRepository(session);
+    let phone = req.body.phone;
+    let email = req.body.email;
 
-//   const executeCreateWalletRegistration = createWalletRegistration(
-//     walletRegistrationRepo,
-//   );
+    if (!phone && !email) {
+      // digits regex expression, to check if identifier is a phone or email
+      const reg = new RegExp('^\\d+$');
 
-//   try {
-//     const newWalletRegistration = walletRegistrationFromRequest({
-//       ...walletRegistration,
-//     });
-//     await session.beginTransaction();
-//     await executeCreateWalletRegistration(newWalletRegistration);
-//     await session.commitTransaction();
-//     res.status(204).json();
-//   } catch (e) {
-//     log.warn(e);
-//     if (session.isTransactionInProgress()) {
-//       await session.rollbackTransaction();
-//     }
-//     next(e);
-//   }
-// };
+      if (reg.test(planter_identifier)) {
+        phone = planter_identifier;
+      } else {
+        email = planter_identifier;
+      }
+    }
 
-// module.exports = {
-//   walletRegistrationPost,
-// };
+    await createWalletRegistration(
+      WalletRegistration({
+        wallet: planter_identifier,
+        id: convertStringToUuid(device_identifier + planter_identifier),
+        first_name,
+        last_name,
+        phone,
+        email,
+        lat,
+        lon,
+        user_photo_url: image_url,
+        v1_legacy_organization: organization,
+      }),
+    );
+    log.log('/v1/planter done');
+    res.status(200).json();
+  } catch (e) {
+    // log.warn(e);
+    next(e);
+  }
+};
+
+module.exports = {
+  walletRegistrationPost,
+  LegacyPlanterPost,
+};

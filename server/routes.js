@@ -5,20 +5,31 @@ const { handlerWrapper } = require('./utils/utils');
 
 const {
   walletRegistrationPost,
+  LegacyPlanterPost,
 } = require('./handlers/walletRegistrationHandler');
+const { sessionPost } = require('./handlers/sessionHandler');
+const { messagePost } = require('./handlers/messageHandler');
 const {
   deviceConfigurationPost,
+  LegacyDevicePost,
 } = require('./handlers/deviceConfigurationHandler');
-// const { sessionPost } = require('./handlers/sessionHandler');
-// const { capturePost } = require('./handlers/captureHandler');
+const {
+  rawCapturePost,
+  LegacyTreePost,
+} = require('./handlers/rawCaptureHandler');
 
-// router
-//   .route('/wallet_registration')
-//   .post(handlerWrapper(walletRegistrationPost));
+router.post('/wallet_registrations', handlerWrapper(walletRegistrationPost));
+router.post('/device_configurations', handlerWrapper(deviceConfigurationPost));
+router.post('/sessions', handlerWrapper(sessionPost));
+router.post('/captures', handlerWrapper(rawCapturePost));
+router.post('/messages', handlerWrapper(messagePost));
 
-router.post('/device_configuration', handlerWrapper(deviceConfigurationPost));
-
-// router.route('/session').post(handlerWrapper(sessionPost));
-// router.route('/capture').post(handlerWrapper(capturePost));
+// Legacy V1
+router.use(
+  '/v1',
+  router.post('/planter', handlerWrapper(LegacyPlanterPost)),
+  router.post('/tree', handlerWrapper(LegacyTreePost)),
+  router.put('/device', handlerWrapper(LegacyDevicePost)),
+);
 
 module.exports = router;

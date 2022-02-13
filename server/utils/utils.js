@@ -5,6 +5,7 @@
 // const JWTService = require("../services/JWTService.js");
 const log = require('loglevel');
 const { ValidationError } = require('joi');
+const { isAxiosError } = require('axios').default;
 const HttpError = require('./HttpError');
 
 /*
@@ -42,6 +43,14 @@ exports.errorHandler = (err, req, res, next) => {
     res.status(422).send({
       code: 422,
       message: err.details.map((m) => m.message).join(';'),
+    });
+  } else if (isAxiosError(err)) {
+    res.status(422).send({
+      code: 500,
+      message:
+        err.response?.data?.message ||
+        err.response?.error ||
+        `Unknown error occured with external service call`,
     });
   } else {
     res.status(500).send({

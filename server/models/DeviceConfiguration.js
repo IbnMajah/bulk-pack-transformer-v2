@@ -1,5 +1,9 @@
+const axios = require('axios').default;
+const { v4: uuid } = require('uuid');
+
+const { treetrackerFieldDataUrl } = require('../../config/config');
+
 const DeviceConfiguration = ({
-  id,
   device_identifier,
   brand,
   model,
@@ -11,8 +15,8 @@ const DeviceConfiguration = ({
   app_version,
   os_version,
   sdk_version,
-  logged_at,
-  created_at,
+  id,
+  logged_at = new Date().toISOString(), // defaults added to cater for data using v1
 }) =>
   Object.freeze({
     id,
@@ -28,9 +32,16 @@ const DeviceConfiguration = ({
     os_version,
     sdk_version,
     logged_at,
-    created_at,
   });
 
+const createDeviceConfiguration = async (deviceConfigurationObject) => {
+  // post to the field-data microservice
+  await axios.post(`${treetrackerFieldDataUrl}/device-configuration`, {
+    ...deviceConfigurationObject,
+  });
+};
+
 module.exports = {
+  createDeviceConfiguration,
   DeviceConfiguration,
 };
