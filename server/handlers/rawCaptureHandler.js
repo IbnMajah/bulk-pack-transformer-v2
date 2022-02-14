@@ -29,7 +29,7 @@ const LegacyTreePost = async function (req, res, next) {
       timestamp,
     } = req.body;
 
-    const attributes = req.body.attributes;
+    const {attributes} = req.body;
 
     const absStepCountIndex = attributes.findIndex(
       (a) => a.key === 'abs_step_count',

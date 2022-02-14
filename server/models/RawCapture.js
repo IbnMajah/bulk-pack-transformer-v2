@@ -2,7 +2,7 @@ const axios = require('axios').default;
 const convertStringToUuid = require('uuid-by-string');
 
 const HttpError = require('../utils/HttpError');
-const { treetrackerFieldDataUrl } = require('../../config/config');
+const config = require('../../config/config');
 
 const RawCapture = ({
   id,
@@ -47,23 +47,28 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
 
     // check if device_identifier and planter_identifier exists, if it does then that is fine
     const existingDeviceResponse = await axios.get(
-      `${treetrackerFieldDataUrl}/device-configuration/${deviceConfigurationId}`,
-    );
-
-    const existingWalletRegistrationResponse = await axios.get(
-      `${treetrackerFieldDataUrl}/wallet-registration/${sessionId}`,
+      `${config.treetrackerFieldDataUrl}/device-configuration/${deviceConfigurationId}`,
     );
 
     const existingDevice = existingDeviceResponse.data;
-    const existingWalletRegistration = existingWalletRegistrationResponse.data;
 
-    if (
-      Object.keys(existingDevice).length === 0 ||
-      Object.keys(existingWalletRegistration).length === 0
-    ) {
+    if (Object.keys(existingDevice).length === 0) {
       throw new HttpError(
         422,
-        'The device and planter information must have been inserted before the raw_capture can be created',
+        'The device information must have been inserted before the raw_capture can be created',
+      );
+    }
+
+    const existingWalletRegistrationResponse = await axios.get(
+      `${config.treetrackerFieldDataUrl}/wallet-registration/${sessionId}`,
+    );
+
+    const existingWalletRegistration = existingWalletRegistrationResponse.data;
+
+    if (Object.keys(existingWalletRegistration).length === 0) {
+      throw new HttpError(
+        422,
+        'The planter information must have been inserted before the raw_capture can be created',
       );
     }
 
@@ -75,7 +80,10 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
     };
 
     // create a session
-    await axios.post(`${treetrackerFieldDataUrl}/session`, sessionObject);
+    await axios.post(
+      `${config.treetrackerFieldDataUrl}/session`,
+      sessionObject,
+    );
 
     rawCaptureObjectToCreate = {
       ...rawCaptureObjectToCreate,
@@ -85,7 +93,7 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
 
   // post to the field-data microservice
   await axios.post(
-    `${treetrackerFieldDataUrl}/raw-captures`,
+    `${config.treetrackerFieldDataUrl}/raw-captures`,
     rawCaptureObjectToCreate,
   );
 };

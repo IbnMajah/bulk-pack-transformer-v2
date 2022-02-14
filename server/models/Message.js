@@ -1,6 +1,6 @@
 const axios = require('axios').default;
 
-const { treetrackerMessagingApiUrl } = require('../../config/config');
+const config = require('../../config/config');
 
 const Message = ({
   message_uuid,
@@ -26,11 +26,12 @@ const Message = ({
 const createMessage = async (messageObject) => {
   // send data to the messaging-api
   await axios.post(
-    `${treetrackerMessagingApiUrl}/message`,
+    `${config.treetrackerMessagingApiUrl}/message`,
     Message(messageObject),
   );
 };
 
 module.exports = {
   createMessage,
+  Message,
 };

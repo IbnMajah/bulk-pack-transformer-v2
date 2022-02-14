@@ -33,8 +33,8 @@ const LegacyPlanterPost = async function (req, res, next) {
       lon,
     } = req.body;
 
-    let phone = req.body.phone;
-    let email = req.body.email;
+    let {phone} = req.body;
+    let {email} = req.body;
 
     if (!phone && !email) {
       // digits regex expression, to check if identifier is a phone or email

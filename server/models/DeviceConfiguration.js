@@ -1,7 +1,6 @@
 const axios = require('axios').default;
-const { v4: uuid } = require('uuid');
 
-const { treetrackerFieldDataUrl } = require('../../config/config');
+const config = require('../../config/config');
 
 const DeviceConfiguration = ({
   device_identifier,
@@ -36,7 +35,7 @@ const DeviceConfiguration = ({
 
 const createDeviceConfiguration = async (deviceConfigurationObject) => {
   // post to the field-data microservice
-  await axios.post(`${treetrackerFieldDataUrl}/device-configuration`, {
+  await axios.post(`${config.treetrackerFieldDataUrl}/device-configuration`, {
     ...deviceConfigurationObject,
   });
 };

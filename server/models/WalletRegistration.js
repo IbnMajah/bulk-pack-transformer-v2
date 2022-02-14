@@ -1,9 +1,6 @@
 const axios = require('axios').default;
 
-const {
-  treetrackerApiUrl,
-  treetrackerFieldDataUrl,
-} = require('../../config/config');
+const config = require('../../config/config');
 
 const WalletRegistration = ({
   wallet,
@@ -55,13 +52,13 @@ const createWalletRegistration = async (walletRegistrationObject) => {
   };
 
   const response = await axios.put(
-    `${treetrackerApiUrl}/grower_accounts`,
+    `${config.treetrackerApiUrl}/grower_accounts`,
     growerAccountObject,
   );
   const grower_account_id = response.data.id;
 
   // post to the field-data microservice
-  await axios.post(`${treetrackerFieldDataUrl}/wallet-registration`, {
+  await axios.post(`${config.treetrackerFieldDataUrl}/wallet-registration`, {
     ...walletRegistrationObject,
     grower_account_id,
   });
