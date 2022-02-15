@@ -1,6 +1,6 @@
 {
   "name": "treetracker",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "private": true,
   "engines": {
     "node": "^16",
@@ -76,10 +76,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Greenstand/{project}.git"
+    "url": "git+https://github.com/Greenstand/bulk-pack-transformer-v2.git"
   },
   "bugs": {
-    "url": "https://github.com/Greenstand/{project}/issues"
+    "url": "https://github.com/Greenstand/bulk-pack-transformer-v2/issues"
   },
-  "homepage": "https://github.com/Greenstand/{project}#readme"
+  "homepage": "https://github.com/Greenstand/bulk-pack-transformer-v2#readme"
 }

@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: SERVICE
+  name: bulk-pack-transformer-v2
   labels:
-    app: SERVICE 
+    app: bulk-pack-transformer-v2 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: SERVICE
+      app: bulk-pack-transformer-v2
   template:
     metadata:
       labels:
-        app: SERVICE
+        app: bulk-pack-transformer-v2
     spec:
       affinity:
         nodeAffinity:
@@ -24,17 +24,12 @@ spec:
                 values:
                 - microservices-node-pool
       containers:
-      - name: SERVICE
-        image: greenstand/SERVICE:TAG
+      - name: bulk-pack-transformer-v2
+        image: greenstand/bulk-pack-transformer-v2:TAG
         ports:
         - containerPort: 80
         env:
-          - name: DATABASE_URL
-            valueFrom:
-              secretKeyRef:
-                name: treetracker-database-connection
-                key: db
-          - name: DATABASE_SCHEMA
-            value: messaging
+          - name: FIELD_DATA_API
+            value: treetracker-field-data.field-data-api:80
       imagePullSecrets:
         - name: greenstand-docker-secret
