@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bulk-pack-transformer-v2
   labels:
-    app: bulk-pack-transformer-v2 
+    app: bulk-pack-transformer-v2
 spec:
   replicas: 1
   selector:
@@ -18,18 +18,22 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: doks.digitalocean.com/node-pool
-                operator: In
-                values:
-                - microservices-node-pool
+              - matchExpressions:
+                  - key: doks.digitalocean.com/node-pool
+                    operator: In
+                    values:
+                      - microservices-node-pool
       containers:
-      - name: bulk-pack-transformer-v2
-        image: greenstand/bulk-pack-transformer-v2:TAG
-        ports:
-        - containerPort: 80
-        env:
-          - name: FIELD_DATA_API
-            value: treetracker-field-data.field-data-api:80
+        - name: bulk-pack-transformer-v2
+          image: greenstand/bulk-pack-transformer-v2:TAG
+          ports:
+            - containerPort: 80
+          env:
+            - name: TREETRACKER_FIELD_DATA_URL
+              value: treetracker-field-data.field-data-api:80
+            - name: TREETRACKER_API_URL
+              value: treetracker-api.treetracker-api:80
+            - name: TREETRACKER_MESSAGING_API_URL
+              value: treetracker-messaging-api.messaging-api:80
       imagePullSecrets:
         - name: greenstand-docker-secret
