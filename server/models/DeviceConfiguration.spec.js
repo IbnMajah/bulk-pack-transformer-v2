@@ -2,9 +2,10 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { default: axios } = require('axios');
+
 chai.use(sinonChai);
 
-const expect = chai.expect;
+const { expect } = chai;
 const {
   DeviceConfiguration,
   createDeviceConfiguration,
@@ -34,10 +35,8 @@ describe('DeviceConfiguration Model', () => {
   it('should make a call to the deviceConfiguration external API endpoint', async () => {
     const deviceObject = { micCheck: '1 2' };
 
-    let axiosStub, fieldDataUrlStub;
-
-    axiosStub = sinon.stub(axios, 'post');
-    fieldDataUrlStub = sinon.stub(config, 'treetrackerFieldDataUrl');
+    const axiosStub = sinon.stub(axios, 'post');
+    const fieldDataUrlStub = sinon.stub(config, 'treetrackerFieldDataUrl');
 
     fieldDataUrlStub.get(() => 'fieldDataUrl');
     await createDeviceConfiguration(deviceObject);

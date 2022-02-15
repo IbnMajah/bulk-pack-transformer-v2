@@ -2,9 +2,10 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { default: axios } = require('axios');
+
 chai.use(sinonChai);
 
-const expect = chai.expect;
+const { expect } = chai;
 const {
   WalletRegistration,
   createWalletRegistration,
@@ -44,12 +45,10 @@ describe('WalletRegistration Model', () => {
       registered_at: 'registered_at',
     };
 
-    let axiosStub, fieldDataUrlStub, treetrackerServiceUrl, axiosPutStub;
-
-    axiosStub = sinon.stub(axios, 'post');
-    axiosPutStub = sinon.stub(axios, 'put');
-    fieldDataUrlStub = sinon.stub(config, 'treetrackerFieldDataUrl');
-    treetrackerServiceUrl = sinon.stub(config, 'treetrackerApiUrl');
+    const axiosStub = sinon.stub(axios, 'post');
+    const axiosPutStub = sinon.stub(axios, 'put');
+    const fieldDataUrlStub = sinon.stub(config, 'treetrackerFieldDataUrl');
+    const treetrackerServiceUrl = sinon.stub(config, 'treetrackerApiUrl');
 
     fieldDataUrlStub.get(() => 'fieldDataUrl');
     treetrackerServiceUrl.get(() => 'treetrackerApiUrl');

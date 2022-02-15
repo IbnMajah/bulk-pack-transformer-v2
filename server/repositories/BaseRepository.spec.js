@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { expect } = require('chai');
 const mockKnex = require('mock-knex');
 const BaseRepository = require('./BaseRepository');

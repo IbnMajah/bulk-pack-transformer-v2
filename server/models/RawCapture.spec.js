@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-expressions */
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { default: axios } = require('axios');
 const convertStringToUuid = require('uuid-by-string');
+
 chai.use(sinonChai);
 
-const expect = chai.expect;
+const { expect } = chai;
 const { RawCapture, createRawCapture } = require('./RawCapture');
 const config = require('../../config/config');
 
@@ -49,7 +51,9 @@ describe('RawCapture Model', () => {
       device_identifier: 'device_identifier',
     };
 
-    let axiosStub, fieldDataUrlStub, axiosGetStub;
+    let axiosStub;
+    let fieldDataUrlStub;
+    let axiosGetStub;
 
     beforeEach(() => {
       axiosStub = sinon.stub(axios, 'post');
@@ -75,9 +79,8 @@ describe('RawCapture Model', () => {
           )
         ) {
           return { data: {} };
-        } else {
-          return { data: { something: 'exists' } };
         }
+        return { data: { something: 'exists' } };
       });
       try {
         await createRawCapture(rawCaptureObject, v1Details);
@@ -103,9 +106,8 @@ describe('RawCapture Model', () => {
           )
         ) {
           return { data: {} };
-        } else {
-          return { data: { something: 'exists' } };
         }
+        return { data: { something: 'exists' } };
       });
       try {
         await createRawCapture(rawCaptureObject, v1Details);

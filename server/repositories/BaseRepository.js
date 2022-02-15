@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 const expect = require('expect-runtime');
 const HttpError = require('../utils/HttpError');
 
