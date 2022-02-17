@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.1...v1.1.2) (2022-02-17)
+
+
+### Bug Fixes
+
+* use http for downstream URLs ([99a4e56](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/99a4e56c39cd65f9b73dd21fb0d1c1cd8510db1c))
+
 ## [1.1.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.0...v1.1.1) (2022-02-17)
 
 
