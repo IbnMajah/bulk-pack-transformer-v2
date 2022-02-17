@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.0...v1.1.1) (2022-02-17)
+
+
+### Bug Fixes
+
+* need next in error handler function ([0f7fa17](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/0f7fa17fcc4fc898a74d91b9a1926330973f3bc5))
+
 # [1.1.0](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.0.2...v1.1.0) (2022-02-15)
 
 
