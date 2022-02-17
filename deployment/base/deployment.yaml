@@ -30,10 +30,10 @@ spec:
             - containerPort: 80
           env:
             - name: TREETRACKER_FIELD_DATA_URL
-              value: treetracker-field-data.field-data-api:80
+              value: http://treetracker-field-data.field-data-api
             - name: TREETRACKER_API_URL
-              value: treetracker-api.treetracker-api:80
+              value: http://treetracker-api.treetracker-api
             - name: TREETRACKER_MESSAGING_API_URL
-              value: treetracker-messaging-api.messaging-api:80
+              value: http://treetracker-messaging-api.messaging-api
       imagePullSecrets:
         - name: greenstand-docker-secret
