@@ -45,11 +45,13 @@ exports.errorHandler = (err, req, res, next) => {
       message: err.details.map((m) => m.message).join(';'),
     });
   } else if (isAxiosError(err)) {
-    res.status(422).send({
-      code: 500,
+    res.status(500).send({
+      microserviceUrl: err.config.url,
+      code: err.response?.data?.code || 500,
       message:
         err.response?.data?.message ||
         err.response?.error ||
+        err.message ||
         `Unknown error occured with external service call`,
     });
   } else {

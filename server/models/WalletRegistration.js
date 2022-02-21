@@ -38,6 +38,8 @@ const createWalletRegistration = async (walletRegistrationObject) => {
     phone,
     email,
     registered_at,
+    lat,
+    lon,
   } = walletRegistrationObject;
 
   // put request to the treetracker api microservice
@@ -47,6 +49,8 @@ const createWalletRegistration = async (walletRegistrationObject) => {
     last_name,
     email,
     phone,
+    lat,
+    lon,
     image_url: user_photo_url,
     first_registration_at: registered_at,
   };
