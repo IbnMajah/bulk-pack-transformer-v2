@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.3...v1.1.4) (2022-02-22)
+
+
+### Bug Fixes
+
+* add some defaults for v1 attributes ([26f3ecb](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/26f3ecb59eb0ece181c12df653e5f8e69c216e71))
+
 ## [1.1.3](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.2...v1.1.3) (2022-02-22)
 
 
