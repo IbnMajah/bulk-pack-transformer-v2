@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.2...v1.1.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* allow nullable step counts and rotation ([051cac0](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/051cac07bf27b993132f7c02b8fcd33f24ffae5f))
+
 ## [1.1.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.1...v1.1.2) (2022-02-17)
 
 
