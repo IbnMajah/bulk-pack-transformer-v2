@@ -26,10 +26,10 @@ const DeviceConfiguration = ({
     serial,
     hardware,
     manufacturer,
-    app_build,
+    app_build: `${app_build}`, // convert to string
     app_version,
     os_version,
-    sdk_version,
+    sdk_version: `${sdk_version}`, // convert to string,
     logged_at,
   });
 
