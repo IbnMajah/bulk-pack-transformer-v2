@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.4...v1.2.0) (2022-02-24)
+
+
+### Features
+
+* add lat and lon to grower account payload ([faf15ff](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/faf15fff9e2410a861b6047da31e7d190ab8fecf))
+
 ## [1.1.4](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.1.3...v1.1.4) (2022-02-22)
 
 
