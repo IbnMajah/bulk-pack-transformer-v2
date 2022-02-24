@@ -9,7 +9,6 @@ const sessionPost = async function (req, res, next) {
     log.log('/sessions done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };

@@ -13,7 +13,6 @@ const deviceConfigurationPost = async function (req, res, next) {
     log.log('/device_configurations done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };
@@ -53,7 +52,6 @@ const LegacyDevicePost = async function (req, res, next) {
     log.log('/v1/device done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };
