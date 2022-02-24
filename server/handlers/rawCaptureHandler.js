@@ -9,7 +9,6 @@ const rawCapturePost = async function (req, res, next) {
     log.log('/captures done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };
@@ -29,7 +28,7 @@ const LegacyTreePost = async function (req, res, next) {
       timestamp,
     } = req.body;
 
-    const {attributes} = req.body;
+    const { attributes } = req.body;
 
     const absStepCountIndex = attributes.findIndex(
       (a) => a.key === 'abs_step_count',
@@ -68,7 +67,6 @@ const LegacyTreePost = async function (req, res, next) {
     log.log('/v1/tree done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };

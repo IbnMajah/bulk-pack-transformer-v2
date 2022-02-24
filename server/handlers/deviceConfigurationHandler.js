@@ -13,7 +13,6 @@ const deviceConfigurationPost = async function (req, res, next) {
     log.log('/device_configurations done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };
@@ -39,7 +38,7 @@ const LegacyDevicePost = async function (req, res, next) {
         id: convertStringToUuid(device_identifier),
         device_identifier,
         app_version,
-        app_build: `${app_build}`, // convert to string
+        app_build,
         manufacturer,
         brand,
         model,
@@ -47,13 +46,12 @@ const LegacyDevicePost = async function (req, res, next) {
         device,
         serial,
         os_version: androidRelease,
-        sdk_version: `${androidSdkVersion}`, // convert to string
+        sdk_version: androidSdkVersion,
       }),
     );
     log.log('/v1/device done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };

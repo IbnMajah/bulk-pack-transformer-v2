@@ -13,7 +13,6 @@ const walletRegistrationPost = async function (req, res, next) {
     log.log('/wallet_registrations done');
     res.status(200).json();
   } catch (e) {
-    log.warn(e);
     next(e);
   }
 };
@@ -63,7 +62,6 @@ const LegacyPlanterPost = async function (req, res, next) {
     log.log('/v1/planter done');
     res.status(200).json();
   } catch (e) {
-    // log.warn(e);
     next(e);
   }
 };

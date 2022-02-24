@@ -62,6 +62,8 @@ describe('WalletRegistration Model', () => {
       phone: 'phone',
       image_url: 'user_photo_url',
       first_registration_at: 'registered_at',
+      lat: 'lat',
+      lon: 'lon',
     });
     expect(axiosStub).calledWith('fieldDataUrl/wallet-registration', {
       ...walletRegistrationObject,
