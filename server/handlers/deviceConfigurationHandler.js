@@ -11,7 +11,7 @@ const deviceConfigurationPost = async function (req, res, next) {
   try {
     const { body } = req;
     body.logged_at = new Date(body.logged_at).toISOString()
-    await createDeviceConfiguration(DeviceConfiguration(req.body));
+    await createDeviceConfiguration(DeviceConfiguration(body));
     log.log('/device_configurations done');
     res.status(200).json();
   } catch (e) {

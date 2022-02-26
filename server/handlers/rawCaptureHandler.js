@@ -5,7 +5,9 @@ const { createRawCapture, RawCapture } = require('../models/RawCapture');
 const rawCapturePost = async function (req, res, next) {
   log.log('/captures');
   try {
-    await createRawCapture(RawCapture(req.body));
+    const { body } = req;
+    body.captured_at = new Date(body.captured_at).toISOString()
+    await createRawCapture(RawCapture(body));
     log.log('/captures done');
     res.status(200).json();
   } catch (e) {

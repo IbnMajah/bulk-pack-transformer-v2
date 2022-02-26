@@ -9,7 +9,9 @@ const {
 const walletRegistrationPost = async function (req, res, next) {
   log.log('/wallet_registrations');
   try {
-    await createWalletRegistration(WalletRegistration(req.body));
+    const { body } = req;
+    body.first_registration_at = new Date(body.first_registration_at).toISOString()
+    await createWalletRegistration(WalletRegistration(body));
     log.log('/wallet_registrations done');
     res.status(200).json();
   } catch (e) {
