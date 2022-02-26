@@ -15,7 +15,7 @@ const DeviceConfiguration = ({
   os_version,
   sdk_version,
   id,
-  logged_at = new Date().toISOString(), // defaults added to cater for data using v1
+  logged_at 
 }) =>
   Object.freeze({
     id,
