@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.1...v1.2.2) (2022-02-26)
+
+
+### Bug Fixes
+
+* convert timestamps to ISOStrings ([476d872](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/476d872e0a2030569f944c770db104101e554514))
+
 ## [1.2.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.0...v1.2.1) (2022-02-26)
 
 
