@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.2...v1.2.3) (2022-02-27)
+
+
+### Bug Fixes
+
+* corrent names of fields ([a3abf8c](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/a3abf8c693b323a2a21bbfbb82715796ebd83010))
+* typo ([bad24d8](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/bad24d8598d1fab8fbf68a269547beae14e4a0b4))
+
 ## [1.2.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.1...v1.2.2) (2022-02-26)
 
 
