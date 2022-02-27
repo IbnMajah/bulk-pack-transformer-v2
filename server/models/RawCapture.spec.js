@@ -26,7 +26,7 @@ describe('RawCapture Model', () => {
       'delta_step_count',
       'rotation_matrix',
       'extra_attributes',
-      'capture_taken_at',
+      'captured_at',
     ]);
   });
 
@@ -43,7 +43,7 @@ describe('RawCapture Model', () => {
       delta_step_count: 'delta_step_count',
       rotation_matrix: 'rotation_matrix',
       extra_attributes: 'extra_attributes',
-      capture_taken_at: 'capture_taken_at',
+      captured_at: 'captured_at',
     };
 
     const v1Details = {

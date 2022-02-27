@@ -62,7 +62,7 @@ const LegacyTreePost = async function (req, res, next) {
         delta_step_count: delta_step_count?.value ?? 0,
         rotation_matrix: rotation_matrix?.value ?? [],
         extra_attributes: attributes,
-        capture_taken_at: new Date(timestamp * 1000).toISOString(),
+        captured_at: Date(timestamp * 1000).toISOString(),
       }),
       { device_identifier, planter_identifier },
     );

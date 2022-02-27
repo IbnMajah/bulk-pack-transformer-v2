@@ -16,7 +16,7 @@ const RawCapture = ({
   delta_step_count,
   rotation_matrix,
   extra_attributes,
-  capture_taken_at,
+  captured_at,
 }) =>
   Object.freeze({
     id,
@@ -30,7 +30,7 @@ const RawCapture = ({
     delta_step_count,
     rotation_matrix,
     extra_attributes,
-    capture_taken_at,
+    capture_at,
   });
 
 const createRawCapture = async (rawCaptureObject, v1Details) => {
