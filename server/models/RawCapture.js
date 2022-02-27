@@ -30,7 +30,7 @@ const RawCapture = ({
     delta_step_count,
     rotation_matrix,
     extra_attributes,
-    capture_at,
+    captured_at,
   });
 
 const createRawCapture = async (rawCaptureObject, v1Details) => {
