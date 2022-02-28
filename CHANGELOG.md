@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.3...v1.2.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* add session model object ([b566fa7](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/b566fa7651fea86cb66d501c7859bd40cc99695b))
+* minor typo ([fff1146](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/fff11462557cc6759f0c9430745cc975087592f5))
+
 ## [1.2.3](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.2...v1.2.3) (2022-02-27)
 
 
