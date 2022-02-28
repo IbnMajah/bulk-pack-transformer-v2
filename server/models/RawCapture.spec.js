@@ -25,7 +25,7 @@ describe('RawCapture Model', () => {
       'abs_step_count',
       'delta_step_count',
       'rotation_matrix',
-      'extra_attributes',
+ //     'extra_attributes',
       'captured_at',
     ]);
   });
