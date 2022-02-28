@@ -29,7 +29,7 @@ const RawCapture = ({
     abs_step_count,
     delta_step_count,
     rotation_matrix,
-  //  extra_attributes,  disable extra_attributes for now
+    extra_attributes,
     captured_at,
   });
 
