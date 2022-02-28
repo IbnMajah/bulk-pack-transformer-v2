@@ -1,3 +1,11 @@
+## [1.2.5](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.4...v1.2.5) (2022-02-28)
+
+
+### Bug Fixes
+
+* disable extra_attributes for now ([f9e2a47](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/f9e2a475cd75cd1b532a28ab5bc7c6215f3bfa98))
+* disable extra_attributes in test ([c63bac9](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/c63bac91182e7ba5ae491da66a883af8e5970696))
+
 ## [1.2.4](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.3...v1.2.4) (2022-02-28)
 
 
