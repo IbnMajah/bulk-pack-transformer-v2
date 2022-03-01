@@ -10,7 +10,7 @@ const deviceConfigurationPost = async function (req, res, next) {
   log.log('/device_configurations');
   try {
     const { body } = req;
-    body.logged_at = new Date(body.logged_at).toISOString()
+    body.logged_at = new Date(body.logged_at).toISOString();
     await createDeviceConfiguration(DeviceConfiguration(body));
     log.log('/device_configurations done');
     res.status(200).json();
@@ -32,9 +32,11 @@ const LegacyDevicePost = async function (req, res, next) {
       hardware,
       device,
       serial,
+      ios_release,
+      ios_sdk_version,
       androidRelease,
       androidSdkVersion,
-      logged_at = new Date().toISOString()
+      logged_at = new Date().toISOString(),
     } = req.body;
     await createDeviceConfiguration(
       DeviceConfiguration({
@@ -48,9 +50,9 @@ const LegacyDevicePost = async function (req, res, next) {
         hardware,
         device,
         serial,
-        os_version: androidRelease,
-        sdk_version: androidSdkVersion,
-        logged_at
+        os_version: androidRelease || ios_release,
+        sdk_version: androidSdkVersion || ios_sdk_version,
+        logged_at,
       }),
     );
     log.log('/v1/device done');
