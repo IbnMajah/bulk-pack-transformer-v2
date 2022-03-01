@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.6...v1.2.7) (2022-03-01)
+
+
+### Bug Fixes
+
+* add message validations ([2615a96](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/2615a96fda0537c92cbe01727371d4871f922a28))
+
 ## [1.2.6](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.5...v1.2.6) (2022-02-28)
 
 
