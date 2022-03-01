@@ -25,7 +25,11 @@ describe('Message Model', () => {
   });
 
   it('should make a call to the message external API endpoint', async () => {
-    const messageObject = { micCheck: '3 4' };
+    const messageObject = {
+      micCheck: '3 4',
+      message_uuid: 'uuid',
+      composed_at: '02/02/2022',
+    };
 
     const axiosStub = sinon.stub(axios, 'post');
     const messageUrlStub = sinon.stub(config, 'treetrackerMessagingApiUrl');
@@ -33,12 +37,12 @@ describe('Message Model', () => {
     messageUrlStub.get(() => 'messageUrl');
     await createMessage(messageObject);
     expect(axiosStub).calledWith('messageUrl/message', {
-      id: undefined,
+      id: 'uuid',
       author_handle: undefined,
       recipient_handle: undefined,
       body: undefined,
       subject: undefined,
-      composed_at: undefined,
+      composed_at: '02/02/2022',
       survey_id: undefined,
       survey_response: undefined,
     });
