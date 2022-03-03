@@ -1,3 +1,11 @@
+## [1.2.8](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.7...v1.2.8) (2022-03-03)
+
+
+### Bug Fixes
+
+* add type to message model ([8ca2ffe](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/8ca2ffe3a8f158100166a970aa38a876893c06a3))
+* tests ([04bb1a6](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/04bb1a6b3572481d58f94f26bb4ffe21f2886196))
+
 ## [1.2.7](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.6...v1.2.7) (2022-03-01)
 
 
