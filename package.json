@@ -23,8 +23,7 @@
     "test-watch-debug": "NODE_ENV=test NODE_LOG_LEVEL=debug mocha -r dotenv/config --env dotenv_config_path=.env.test --timeout 10000 -w -b --ignore './server/repositories/**/*.spec.js'  './server/setup.js' './server/**/*.spec.js' './__tests__/seed-spec-example.spec.js' './__tests__/supertest-example.spec.js'",
     "prettier-fix": "prettier ./ --write",
     "db-migrate-ci": "cd database; db-migrate up",
-    "prepare": "husky install",
-    "pre-commit": "npm test && npm run eslint"
+    "prepare": "husky install"
   },
   "keywords": [
     "ecology"
