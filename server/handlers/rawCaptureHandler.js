@@ -7,7 +7,7 @@ const rawCapturePost = async function (req, res, next) {
   try {
     const { body } = req;
     body.captured_at = new Date(body.captured_at).toISOString();
-    delete body.extra_attributes
+    delete body.extra_attributes;
     await createRawCapture(RawCapture(body));
     log.log('/captures done');
     res.status(200).json();
@@ -36,20 +36,32 @@ const LegacyTreePost = async function (req, res, next) {
     const absStepCountIndex = attributes.findIndex(
       (a) => a.key === 'abs_step_count',
     );
-    const absStepCountArray = attributes.splice(absStepCountIndex, 1);
-    const [abs_step_count] = absStepCountArray;
+    let abs_step_count;
+
+    if (absStepCountIndex !== -1) {
+      const absStepCountArray = attributes.splice(absStepCountIndex, 1);
+      [abs_step_count] = absStepCountArray;
+    }
 
     const deltaStepCountIndex = attributes.findIndex(
       (a) => a.key === 'delta_step_count',
     );
-    const deltaStepCountArray = attributes.splice(deltaStepCountIndex, 1);
-    const [delta_step_count] = deltaStepCountArray;
+    let delta_step_count;
+
+    if (deltaStepCountIndex !== -1) {
+      const deltaStepCountArray = attributes.splice(deltaStepCountIndex, 1);
+      [delta_step_count] = deltaStepCountArray;
+    }
 
     const rotationMatrixIndex = attributes.findIndex(
       (a) => a.key === 'rotation_matrix',
     );
-    const rotationMatrixArray = attributes.splice(rotationMatrixIndex, 1);
-    const [rotation_matrix] = rotationMatrixArray;
+    let rotation_matrix;
+
+    if (rotationMatrixIndex !== -1) {
+      const rotationMatrixArray = attributes.splice(rotationMatrixIndex, 1);
+      [rotation_matrix] = rotationMatrixArray;
+    }
 
     await createRawCapture(
       RawCapture({
@@ -61,7 +73,7 @@ const LegacyTreePost = async function (req, res, next) {
         note,
         abs_step_count: abs_step_count?.value ?? 0,
         delta_step_count: delta_step_count?.value ?? 0,
-        rotation_matrix: rotation_matrix?.value ?? [],
+        rotation_matrix: rotation_matrix?.value?.split(',') ?? [],
         extra_attributes: attributes,
         captured_at: new Date(timestamp * 1000).toISOString(),
       }),
