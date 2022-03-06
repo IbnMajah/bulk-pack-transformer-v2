@@ -6,8 +6,7 @@ const rawCapturePost = async function (req, res, next) {
   log.log('/captures');
   try {
     const { body } = req;
-    body.captured_at = new Date(body.captured_at).toISOString();
-    delete body.extra_attributes;
+    delete body.extra_attributes
     await createRawCapture(RawCapture(body));
     log.log('/captures done');
     res.status(200).json();
