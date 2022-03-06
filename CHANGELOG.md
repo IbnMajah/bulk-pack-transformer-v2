@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.9...v1.3.0) (2022-03-06)
+
+
+### Features
+
+* switch back to ISO data for v2 ([c12bd64](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/c12bd64bec8b1ffca4964ca821edc799b3a10805))
+
 ## [1.2.9](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.8...v1.2.9) (2022-03-06)
 
 
