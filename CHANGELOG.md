@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.0...v1.3.1) (2022-03-06)
+
+
+### Bug Fixes
+
+* rename prod to production ([5319b78](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/5319b78492a14c0d900cfbf3eb28de50be733ea0))
+
 # [1.3.0](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.2.9...v1.3.0) (2022-03-06)
 
 
