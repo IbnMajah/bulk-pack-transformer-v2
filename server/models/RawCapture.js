@@ -55,12 +55,13 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
     if (Object.keys(existingDevice).length === 0) {
       throw new HttpError(
         422,
-        'The device information must have been inserted before the raw_capture can be created',
+        `The device information must have been inserted before the raw_capture can be created ${deviceConfigurationId}`,
       );
     }
 
+    const walletRegistrationId = sessionId; // legacy bulk pack has just a single session for each user
     const existingWalletRegistrationResponse = await axios.get(
-      `${config.treetrackerFieldDataUrl}/wallet-registration/${sessionId}`,
+      `${config.treetrackerFieldDataUrl}/wallet-registration/${walletRegistrationId}`,
     );
 
     const existingWalletRegistration = existingWalletRegistrationResponse.data;
@@ -68,7 +69,7 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
     if (Object.keys(existingWalletRegistration).length === 0) {
       throw new HttpError(
         422,
-        'The planter information must have been inserted before the raw_capture can be created',
+        `The wallet registration information must have been inserted before the raw_capture can be created ${walletRegistrationId}`,
       );
     }
 
