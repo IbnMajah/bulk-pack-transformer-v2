@@ -89,8 +89,8 @@ describe('RawCapture Model', () => {
       } catch (e) {
         expect(axiosGetStub).to.be.calledTwice;
         expect(axiosStub).to.not.called;
-        expect(e.message).to.eql(
-          'The planter information must have been inserted before the raw_capture can be created',
+        expect(e.message).to.contain(
+          'The wallet registration information must have been inserted before the raw_capture can be created',
         );
         expect(e.code).to.eql(422);
       }
@@ -116,7 +116,7 @@ describe('RawCapture Model', () => {
       } catch (e) {
         expect(axiosGetStub).to.be.calledOnce;
         expect(axiosStub).to.not.called;
-        expect(e.message).to.eql(
+        expect(e.message).to.contain(
           'The device information must have been inserted before the raw_capture can be created',
         );
         expect(e.code).to.eql(422);
