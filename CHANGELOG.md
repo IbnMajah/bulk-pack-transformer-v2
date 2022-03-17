@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.2...v1.3.3) (2022-03-17)
+
+
+### Bug Fixes
+
+* message_uuid should be called id ([3392108](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/339210827775bdf3f5ac7b9a4d659c2b7e2e496c))
+
 ## [1.3.2](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.1...v1.3.2) (2022-03-08)
 
 
