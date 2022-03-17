@@ -12,7 +12,7 @@ const Message = ({
   subject,
   composed_at,
   survey_id,
-  answers,
+  survey_response,
 }) =>
   Object.freeze({
     id,
@@ -23,7 +23,7 @@ const Message = ({
     subject,
     composed_at,
     survey_id,
-    survey_response: answers,
+    survey_response,
   });
 
 const createMessage = async (messageObject) => {
