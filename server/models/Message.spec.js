@@ -28,7 +28,7 @@ describe('Message Model', () => {
   it('should make a call to the message external API endpoint', async () => {
     const messageObject = {
       micCheck: '3 4',
-      message_uuid: 'uuid',
+      id: 'uuid',
       composed_at: '02/02/2022',
     };
 
