@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.5...v1.3.6) (2022-03-22)
+
+
+### Bug Fixes
+
+* default image url ([dbd210e](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/dbd210e439121e51af10e1bbce0b58077c290420))
+
 ## [1.3.5](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.4...v1.3.5) (2022-03-22)
 
 
