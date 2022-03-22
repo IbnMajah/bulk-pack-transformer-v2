@@ -2,6 +2,9 @@ const axios = require('axios').default;
 
 const config = require('../../config/config');
 
+const defaultImageUrl =
+  'https://greenstand.org/fileadmin/02-graphics/12-externally-linked/no-planter-image.png';
+
 const WalletRegistration = ({
   wallet,
   first_name,
@@ -11,7 +14,7 @@ const WalletRegistration = ({
   lat,
   lon,
   id,
-  user_photo_url,
+  user_photo_url = defaultImageUrl,
   v1_legacy_organization = null,
   registered_at = new Date().toISOString(),
 }) =>
