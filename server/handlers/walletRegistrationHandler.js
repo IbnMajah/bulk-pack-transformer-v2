@@ -46,6 +46,9 @@ const LegacyPlanterPost = async function (req, res, next) {
       }
     }
 
+    const defaultImageUrl =
+      'https://greenstand.org/fileadmin/02-graphics/12-externally-linked/no-planter-image.png';
+
     await createWalletRegistration(
       WalletRegistration({
         wallet: planter_identifier,
@@ -56,7 +59,7 @@ const LegacyPlanterPost = async function (req, res, next) {
         email,
         lat,
         lon,
-        user_photo_url: image_url,
+        user_photo_url: image_url || defaultImageUrl,
         v1_legacy_organization: organization,
       }),
     );

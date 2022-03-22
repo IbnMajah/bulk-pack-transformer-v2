@@ -28,9 +28,6 @@ describe('WalletRegistration Model', () => {
       'v1_legacy_organization',
       'registered_at',
     ]);
-    expect(walletRegistration.user_photo_url).to.eql(
-      'https://greenstand.org/fileadmin/02-graphics/12-externally-linked/no-planter-image.png',
-    );
   });
 
   it('should make a call to the walletRegistration external API endpoint', async () => {
