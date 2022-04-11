@@ -45,6 +45,7 @@ describe('RawCapture Model', () => {
       rotation_matrix: 'rotation_matrix',
       extra_attributes: 'extra_attributes',
       captured_at: 'captured_at',
+      bulk_pack_file_name: 'bulk_pack_file_name',
     };
 
     const v1Details = {
@@ -144,6 +145,7 @@ describe('RawCapture Model', () => {
           device_configuration_id: convertStringToUuid(device_identifier),
           originating_wallet_registration_id: sessionId,
           organization: 'v1_legacy_organization',
+          bulk_pack_file_name: rawCaptureObject.bulk_pack_file_name,
         }) &&
           axiosStub.calledWith('treetrackerFieldDataUrl/raw-captures', {
             ...rawCaptureObject,

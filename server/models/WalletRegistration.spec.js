@@ -44,6 +44,7 @@ describe('WalletRegistration Model', () => {
       lon: 'lon',
       v1_legacy_organization: 'v1_legacy_organization',
       registered_at: 'registered_at',
+      bulk_pack_file_name: 'file_name',
     };
 
     const axiosStub = sinon.stub(axios, 'post');
@@ -65,9 +66,11 @@ describe('WalletRegistration Model', () => {
       first_registration_at: 'registered_at',
       lat: 'lat',
       lon: 'lon',
+      bulk_pack_file_name: 'file_name',
     });
     expect(axiosStub).calledWith('fieldDataUrl/wallet-registration', {
       ...walletRegistrationObject,
+      bulk_pack_file_name: 'file_name',
       grower_account_id: 'growerAccountId',
     });
     axiosStub.restore();
