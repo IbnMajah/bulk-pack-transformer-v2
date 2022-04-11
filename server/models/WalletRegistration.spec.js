@@ -27,6 +27,7 @@ describe('WalletRegistration Model', () => {
       'lon',
       'v1_legacy_organization',
       'registered_at',
+      'bulk_pack_file_name',
     ]);
   });
 

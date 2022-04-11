@@ -15,7 +15,8 @@ const DeviceConfiguration = ({
   os_version,
   sdk_version,
   id,
-  logged_at 
+  key,
+  logged_at,
 }) =>
   Object.freeze({
     id,
@@ -31,6 +32,7 @@ const DeviceConfiguration = ({
     os_version,
     sdk_version: `${sdk_version}`, // convert to string,
     logged_at,
+    bulk_pack_file_name: key,
   });
 
 const createDeviceConfiguration = async (deviceConfigurationObject) => {

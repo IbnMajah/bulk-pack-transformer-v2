@@ -20,6 +20,7 @@ describe('Session Model', () => {
       'check_in_photo_url',
       'track_url',
       'organization',
+      'bulk_pack_file_name',
     ]);
   });
 

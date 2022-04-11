@@ -17,6 +17,7 @@ const RawCapture = ({
   rotation_matrix,
   extra_attributes,
   captured_at,
+  key,
 }) =>
   Object.freeze({
     id,
@@ -30,6 +31,7 @@ const RawCapture = ({
     delta_step_count,
     rotation_matrix,
     extra_attributes,
+    bulk_pack_file_name: key,
     captured_at,
   });
 
@@ -78,6 +80,7 @@ const createRawCapture = async (rawCaptureObject, v1Details) => {
       device_configuration_id: deviceConfigurationId,
       originating_wallet_registration_id: sessionId,
       organization: existingWalletRegistration.v1_legacy_organization,
+      bulk_pack_file_name: rawCaptureObjectToCreate.bulk_pack_file_name,
     };
 
     // create a session

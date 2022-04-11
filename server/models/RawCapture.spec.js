@@ -27,6 +27,7 @@ describe('RawCapture Model', () => {
       'rotation_matrix',
       'extra_attributes',
       'captured_at',
+      'bulk_pack_file_name',
     ]);
   });
 

@@ -22,6 +22,7 @@ describe('Message Model', () => {
       'composed_at',
       'survey_id',
       'survey_response',
+      'bulk_pack_file_name',
     ]);
   });
 

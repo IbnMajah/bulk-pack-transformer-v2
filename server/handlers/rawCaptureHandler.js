@@ -6,7 +6,7 @@ const rawCapturePost = async function (req, res, next) {
   log.log('/captures');
   try {
     const { body } = req;
-    delete body.extra_attributes
+    delete body.extra_attributes;
     await createRawCapture(RawCapture(body));
     log.log('/captures done');
     res.status(200).json();
@@ -28,6 +28,7 @@ const LegacyTreePost = async function (req, res, next) {
       device_identifier,
       planter_identifier,
       timestamp,
+      key,
     } = req.body;
 
     const { attributes } = req.body;
@@ -75,6 +76,7 @@ const LegacyTreePost = async function (req, res, next) {
         rotation_matrix: rotation_matrix?.value?.split(',') ?? [],
         extra_attributes: attributes,
         captured_at: new Date(timestamp * 1000).toISOString(),
+        key,
       }),
       { device_identifier, planter_identifier },
     );

@@ -13,6 +13,7 @@ const WalletRegistration = ({
   id,
   user_photo_url,
   v1_legacy_organization = null,
+  key,
   registered_at = new Date().toISOString(),
 }) =>
   Object.freeze({
@@ -27,6 +28,7 @@ const WalletRegistration = ({
     lon,
     v1_legacy_organization,
     registered_at,
+    bulk_pack_file_name: key,
   });
 
 const createWalletRegistration = async (walletRegistrationObject) => {
@@ -40,6 +42,7 @@ const createWalletRegistration = async (walletRegistrationObject) => {
     registered_at,
     lat,
     lon,
+    bulk_pack_file_name,
   } = walletRegistrationObject;
 
   // put request to the treetracker api microservice
@@ -53,6 +56,7 @@ const createWalletRegistration = async (walletRegistrationObject) => {
     lon,
     image_url: user_photo_url,
     first_registration_at: registered_at,
+    bulk_pack_file_name,
   };
 
   const response = await axios.put(
