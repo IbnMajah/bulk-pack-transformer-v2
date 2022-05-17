@@ -30,6 +30,7 @@ const LegacyPlanterPost = async function (req, res, next) {
       image_url,
       lat,
       lon,
+      key,
     } = req.body;
 
     let { phone } = req.body;
@@ -61,6 +62,7 @@ const LegacyPlanterPost = async function (req, res, next) {
         lon,
         user_photo_url: image_url || defaultImageUrl,
         v1_legacy_organization: organization,
+        key,
       }),
     );
     log.log('/v1/planter done');

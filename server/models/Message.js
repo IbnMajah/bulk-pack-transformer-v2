@@ -13,6 +13,7 @@ const Message = ({
   composed_at,
   survey_id,
   survey_response,
+  key,
 }) =>
   Object.freeze({
     id,
@@ -24,13 +25,13 @@ const Message = ({
     composed_at,
     survey_id,
     survey_response,
+    bulk_pack_file_name: key,
   });
 
 const createMessage = async (messageObject) => {
   const messageToCreate = Message(messageObject);
 
-  if (!messageToCreate.id)
-    throw new HttpError(422, 'id cannot be empty');
+  if (!messageToCreate.id) throw new HttpError(422, 'id cannot be empty');
 
   if (!messageToCreate.composed_at)
     throw new HttpError(422, 'composed_at cannot be empty');

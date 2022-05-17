@@ -22,6 +22,7 @@ describe('Message Model', () => {
       'composed_at',
       'survey_id',
       'survey_response',
+      'bulk_pack_file_name',
     ]);
   });
 
@@ -30,6 +31,7 @@ describe('Message Model', () => {
       micCheck: '3 4',
       id: 'uuid',
       composed_at: '02/02/2022',
+      key: 'file_name',
     };
 
     const axiosStub = sinon.stub(axios, 'post');
@@ -47,6 +49,7 @@ describe('Message Model', () => {
       composed_at: '02/02/2022',
       survey_id: undefined,
       survey_response: undefined,
+      bulk_pack_file_name: messageObject.key,
     });
     axiosStub.restore();
     messageUrlStub.restore();

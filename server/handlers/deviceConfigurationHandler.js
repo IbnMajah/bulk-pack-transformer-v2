@@ -36,6 +36,7 @@ const LegacyDevicePost = async function (req, res, next) {
       androidRelease,
       androidSdkVersion,
       logged_at = new Date().toISOString(),
+      key,
     } = req.body;
     await createDeviceConfiguration(
       DeviceConfiguration({
@@ -52,6 +53,7 @@ const LegacyDevicePost = async function (req, res, next) {
         os_version: androidRelease || ios_release,
         sdk_version: androidSdkVersion || ios_sdk_version,
         logged_at,
+        key,
       }),
     );
     log.log('/v1/device done');

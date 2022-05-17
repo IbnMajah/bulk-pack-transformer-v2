@@ -20,6 +20,7 @@ describe('Session Model', () => {
       'check_in_photo_url',
       'track_url',
       'organization',
+      'bulk_pack_file_name',
     ]);
   });
 
@@ -32,6 +33,7 @@ describe('Session Model', () => {
       check_in_photo_url: 'check_in_photo_url',
       track_url: 'track_url',
       organization: 'organization',
+      key: 'bulk_pack_file_name',
     };
 
     const axiosStub = sinon.stub(axios, 'post');
@@ -39,7 +41,11 @@ describe('Session Model', () => {
 
     sessionUrlStub.get(() => 'sessionUrl');
     await createSession(sessionObject);
-    expect(axiosStub).calledWith('sessionUrl/session', sessionObject);
+    delete sessionObject.key;
+    expect(axiosStub).calledWith('sessionUrl/session', {
+      ...sessionObject,
+      bulk_pack_file_name: 'bulk_pack_file_name',
+    });
     axiosStub.restore();
     sessionUrlStub.restore();
   });

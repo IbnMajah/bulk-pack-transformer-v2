@@ -29,6 +29,7 @@ describe('DeviceConfiguration Model', () => {
       'os_version',
       'sdk_version',
       'logged_at',
+      'bulk_pack_file_name',
     ]);
   });
 

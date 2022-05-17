@@ -10,6 +10,7 @@ const Session = ({
   check_in_photo_url,
   track_url,
   organization,
+  key,
 }) =>
   Object.freeze({
     id,
@@ -19,6 +20,7 @@ const Session = ({
     check_in_photo_url,
     track_url,
     organization,
+    bulk_pack_file_name: key,
   });
 
 const createSession = async (sessionObject) => {
