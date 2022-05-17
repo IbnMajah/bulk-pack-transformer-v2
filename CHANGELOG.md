@@ -1,3 +1,10 @@
+## [1.3.7](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.6...v1.3.7) (2022-05-17)
+
+
+### Bug Fixes
+
+* send bulk pack file name to the various microservices ([9be222a](https://github.com/Greenstand/bulk-pack-transformer-v2/commit/9be222a7b443140960cff1724863cc76f319159c))
+
 ## [1.3.6](https://github.com/Greenstand/bulk-pack-transformer-v2/compare/v1.3.5...v1.3.6) (2022-03-22)
 
 
