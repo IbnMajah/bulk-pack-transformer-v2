@@ -1,4 +1,3 @@
 resources:
-- greenstand-docker-pull-sealed-secret.yaml
 - deployment.yaml
 - service.yaml
