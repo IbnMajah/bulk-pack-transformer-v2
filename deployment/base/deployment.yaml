@@ -35,5 +35,3 @@ spec:
               value: http://treetracker-api.treetracker-api
             - name: TREETRACKER_MESSAGING_API_URL
               value: http://treetracker-messaging-api.messaging-api
-      imagePullSecrets:
-        - name: greenstand-docker-secret
