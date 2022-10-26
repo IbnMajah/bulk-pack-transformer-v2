@@ -4,7 +4,7 @@ const log = require('loglevel');
 require('./setup');
 const app = require('./app');
 
-const port = process.env.NODE_PORT || 3006;
+const port = process.env.NODE_PORT || 3003;
 
 app.listen(port, () => {
   log.info(`listening on port:${port}`);
